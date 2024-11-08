@@ -10,12 +10,8 @@
 
   <form th:action="@{/questions/tone-rules/check}" method="post">
     <input type="hidden" th:value="${question.id}" name="questionId"/>
-    <div>
-      <input type="radio" th:value="${question.choice1}" name="selectedAnswer"/> <span th:text="${question.choice1}"></span><br>
-      <input type="radio" th:value="${question.choice2}" name="selectedAnswer"/> <span th:text="${question.choice2}"></span><br>
-      <input type="radio" th:value="${question.choice3}" name="selectedAnswer"/> <span th:text="${question.choice3}"></span><br>
-      <input type="radio" th:value="${question.choice4}" name="selectedAnswer"/> <span th:text="${question.choice4}"></span><br>
-      <input type="radio" th:value="${question.choice5}" name="selectedAnswer"/> <span th:text="${question.choice5}"></span><br>
+    <div th:each="choice : ${question.choices}">
+      <input type="radio" th:value="${choice}" name="selectedAnswer"/> <span th:text="${choice}"></span><br>
     </div>
     <button type="submit">回答</button>
   </form>
