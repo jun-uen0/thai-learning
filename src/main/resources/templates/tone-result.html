@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>結果</title>
+</head>
+<body>
+<div class="container">
+  <h2>回答結果</h2>
+  <p th:if="${isCorrect}">正解！</p>
+  <p th:if="${!isCorrect}">残念！</p>
+  <a href="/questions/tone-rules">クイズに戻る</a>
+</div>
+</body>
+</html>

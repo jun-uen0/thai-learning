@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>発音クイズ</title>
+</head>
+<body>
+<div class="container">
+  <h2>次のタイ文字に適切な発音は以下の5つのうち、どれでしょうか</h2>
+  <p th:text="${question.thaiWord}"></p>
+
+  <form th:action="@{/questions/tone-rules/check}" method="post">
+    <input type="hidden" th:value="${question.id}" name="questionId"/>
+    <div>
+      <input type="radio" th:value="${question.choice1}" name="selectedAnswer"/> <span th:text="${question.choice1}"></span><br>
+      <input type="radio" th:value="${question.choice2}" name="selectedAnswer"/> <span th:text="${question.choice2}"></span><br>
+      <input type="radio" th:value="${question.choice3}" name="selectedAnswer"/> <span th:text="${question.choice3}"></span><br>
+      <input type="radio" th:value="${question.choice4}" name="selectedAnswer"/> <span th:text="${question.choice4}"></span><br>
+      <input type="radio" th:value="${question.choice5}" name="selectedAnswer"/> <span th:text="${question.choice5}"></span><br>
+    </div>
+    <button type="submit">回答</button>
+  </form>
+</div>
+</body>
+</html>
