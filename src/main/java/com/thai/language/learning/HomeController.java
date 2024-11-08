@@ -7,7 +7,8 @@ import org.springframework.ui.Model;
 @Controller
 public class HomeController {
 
-  // Greeting message
+  // TODO: Bottun to go to quiz
+
   String greetingMsg = "สวัสดีครับ";
 
   @GetMapping("/")
