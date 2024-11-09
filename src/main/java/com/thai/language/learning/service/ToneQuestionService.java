@@ -3,10 +3,13 @@ package com.thai.language.learning.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thai.language.learning.domain.ToneQuestion;
+
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Random;
 
@@ -23,7 +26,8 @@ public class ToneQuestionService {
   private void loadQuestionsFromJson() {
     ObjectMapper mapper = new ObjectMapper();
     try {
-      questions = mapper.readValue(new File("src/main/resources/toneQuestions.json"), new TypeReference<List<ToneQuestion>>(){});
+      InputStream inputStream = new ClassPathResource("toneQuestions.json").getInputStream();
+      questions = mapper.readValue(inputStream, new TypeReference<List<ToneQuestion>>(){});
     } catch (IOException e) {
       e.printStackTrace();
     }
