@@ -58,34 +58,6 @@ Ensure the following tools are installed on your system:
 
 ---
 
-## Maven Configuration
-
-The `pom.xml` specifies Java 17 as the target version:
-
-```xml
-<properties>
-    <java.version>17</java.version>
-</properties>
-```
-
-While your local environment uses Java 20, Spring Boot 3.3.x is compatible with Java 17 and above. You can update the `<java.version>` to 20 if needed for consistency:
-
-```xml
-<properties>
-    <java.version>20</java.version>
-</properties>
-```
-
----
-
-## Future Enhancements
-
-- Add more tone rules and Thai language features.
-- Include audio support for listening comprehension using Google Text-to-Speech API.
-- Expand deployment support to include Kubernetes or cloud platforms.
-
----
-
 ## License
 
 This project is licensed under [MIT License](LICENSE).
@@ -94,8 +66,4 @@ This project is licensed under [MIT License](LICENSE).
 
 ## Contribution
 
-Feel free to open issues and pull requests to enhance this application.
-
----
-
-これをREADMEとして記載することで、初めて使う人にもわかりやすく、またあなたの開発環境や実装意図が簡潔に伝わる内容になっていると思います！
+Feel free to open issues and pull requests to enhance this application 😆😆😆
